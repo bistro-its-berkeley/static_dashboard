@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bistro Bashboard</title>
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <script src="dashboard.js"></script>
+</head>
+
+<body style="margin: 0">
+<div class="bk-root">
+<div class="bk-grid bk-grid-column bk-layout-fixed" style="position: relative; height: 1690px;">
+    <div class="bk-widget-box bk-layout-fixed" style="background-color: #222; min-height: 60px; margin-bottom: 21px; color: #ffffff; left: 0; right: 0;">
+        <div class="bk-widget bk-layout-fixed" style="top:0; border: 0; margin-right: auto; margin-left: auto; width: 970px; padding-left: 15px; padding-right: 15px">
+                <div style="font-size: 200%; margin-left: 0; margin-right: 0; float: left; display: block">
+                    <font class="logo">BISTRO</font>
+                    <b> Visualization Dashboard</b>
+                </div>
+
+                <div class="navbar-right">
+                <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+                <a href="http://bistro.its.berkeley.edu/index.html">HOME</a>
+                </div>
+        </div>
+    </div>
+
+
+    <div class="bk-grid bk-grid-row bk-layout-fixed" style="position: relative; width: 600px; height: 79px; margin-left: auto; margin-right: auto">
+        <div class="bk-widget-box bk-layout-fixed" style="width: 280px">
+        <div class="bk-widget bk-layout-fixed">
+            <label>Submission 1</label>
+            <select id="select-sub-1" class="bk-widget-form-input">
+                <option selected="true" value='Sioux-Faux-BAU@2019-11-12 21:31:09'>Sioux-Faux-BAU@2019-11-12 21:31:09</option>
+                <option value='pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16'>pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16</option>
+            </select>
+        </div>
+        </div>
+        
+        <div class="bk-widget-box bk-layout-fixed" style="width: 280px;">
+        <div class="bk-widget bk-layout-fixed">
+            <label>Submission 2</label>
+            <select id="select-sub-2" class="bk-widget-form-input">
+                <option value='Sioux-Faux-BAU@2019-11-12 21:31:09'>Sioux-Faux-BAU@2019-11-12 21:31:09</option>
+                <option selected="true" value='pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16'>pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16</option>
+            </select>
+        </div>
+        </div>
+    </div>
+
+    <div class="bk-widget-box bk-layout-fixed" style="width: 1180px; margin-left: auto; margin-right: auto">
+        <div class="bk-widget bk-layout-fixed" style="width: 1200px;">
+            <ul class="bk-bs-nav bk-bs-nav-tabs">
+                <li id="input-nav" class="bk-bs-active"><span>Inputs</span></li>
+                <li id="score-nav"><span>Scores</span></li>
+                <li id="mode-nav"><span>Outputs - Mode Choice</span></li>
+                <li id="service-nav"><span>Outputs - Level of Service</span></li>
+                <li id="congestion-nav"><span>Outputs - Congestion</span></li>
+                <li id="benefit-nav"><span>Outputs - Cost/Benefit</span></li>
+                <li id="toll-nav"><span>Outputs - Toll Revenue</span></li>
+                <li id="sustainability-nav"><span>Outputs - Sustainability</span></li>
+            </ul>
+            <div class="bk-bs-tab-content">
+                <!-- Inputs -->
+                <div id="input-panel" class="bk-bs-tab-pane bk-bs-active">
+                    <!--
+                    <div class="bk-grid bk-grid-column bk-layout-fixed"  style="position: relative; width: 1200px; height: 1500px;">
+                        <div class="bk-grid bk-grid-row bk-layout-fixed" style="position: relative; width: 1200px; height: 1500px;">
+                            <div class="bk-grid bk-grid-column bk-layout-fixed" style="position: relative; width: 600px; height: 1500px;">
+
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/Sioux-Faux-BAU@2019-11-12 21:31:09/inputs/fleetmix_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/Sioux-Faux-BAU@2019-11-12 21:31:09/inputs/routesched_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/Sioux-Faux-BAU@2019-11-12 21:31:09/inputs/fares_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/Sioux-Faux-BAU@2019-11-12 21:31:09/inputs/modeinc_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="bk-grid bk-grid-column bk-layout-fixed">
+
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16/inputs/fleetmix_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16/inputs/routesched_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16/inputs/fares_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 600px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 600px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 600px; height: 350px; cursor: default;">
+                                            <img src="figures/pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16/inputs/modeinc_input.png">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+                <!-- Scores -->
+                <div id="score-panel" class="bk-bs-tab-pane">
+                    <!--
+                    <div class="bk-grid bk-grid-column bk-layout-fixed" style="position: relative; width: 1200px; height: 700px;">
+                        <div class="bk-grid bk-grid-row bk-layout-fixed" style="position: relative; width: 1200px; height: 700px;">
+                            <div class="bk-grid bk-grid-column bk-layout-fixed" style="position: relative; width: 1200px; height: 700px;">
+                                <div class="bk-grid bk-grid-column bk-layout-fixed" style="position: relative; width: 1200px; height: 350px;">
+                                    <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 1200px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 1200px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 1200px; height: 350px; cursor: default;">
+                                            <img src="figures/Sioux-Faux-BAU@2019-11-12 21:31:09/normalized_scores.png">
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="bk-grid bk-grid-column bk-layout-fixed" style="position: relative; width: 1200px; height: 350px;">
+                                    <div class="bk-plot-layout bk-layout-fixed" style="position: relative; width: 1200px; height: 350px;">
+                                    <div class="bk-plot-wrapper" style="position: absolute; left: 0px; top: 0px; width: 1200px; height: 350px;">
+                                        <div class="bk-canvas-wrapper" style="width: 1200px; height: 350px; cursor: default;">
+                                            <img src="figures/pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16/normalized_scores.png">
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    -->
+                </div>
+                <!-- Outputs - Mode Choice -->
+                <div id="mode-panel" class="bk-bs-tab-pane">
+                    
+                </div>
+                <!-- Outputs - Level of Service -->
+                <div id="service-panel" class="bk-bs-tab-pane">
+                    
+                </div>
+                <!-- Outputs - Congestion -->
+                <div id="congestion-panel" class="bk-bs-tab-pane">
+                    
+                </div>
+                <!-- Outputs - Cost/Benefit -->
+                <div id="benefit-panel" class="bk-bs-tab-pane">
+                    
+                </div>
+                <!-- Outputs - Toll Revenue -->
+                <div id="toll-panel" class="bk-bs-tab-pane">
+                    
+                </div>
+                <!-- Outputs - Sustainability -->
+                <div id="sustainability-panel" class="bk-bs-tab-pane">
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>
