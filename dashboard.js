@@ -8,6 +8,57 @@ let panels = ["input-panel", "score-panel", "mode-panel", "service-panel",
 let contents = ["input", "score", "mode", "service", "congestion", "benefit",
                "toll", "sustainability"];
 
+let submissions = ['Sioux-Faux-BAU@2019-11-12 21:31:09',
+ 'pareto_Aggregate_Congestion-1@2019-11-21 15:26:56',
+ 'pareto_Aggregate_Social-1@2019-11-21 15:26:56',
+ 'pareto_Aggregate_toll_revenue-1@2019-11-21 15:26:56',
+ 'pareto_Aggregate_toll_revenue-2@2019-11-19 17:18:00',
+ 'pareto_Aggregate_toll_revenue-3@2019-11-21 14:42:10',
+ 'pareto_Aggregate_toll_revenue-4@2019-11-19 08:39:28',
+ 'pareto_Congestion_Social-1@2019-11-21 15:26:56',
+ 'pareto_Congestion_Toll_revenue-1@2019-11-21 15:26:56',
+ 'pareto_Congestion_Toll_revenue-2@2019-11-21 13:16:05',
+ 'pareto_Congestion_Toll_revenue-3@2019-11-19 17:18:00',
+ 'pareto_Congestion_Toll_revenue-4@2019-11-19 09:46:23',
+ 'pareto_Congestion_Toll_revenue-5@2019-11-19 08:39:28',
+ 'pareto_Social_Toll_revenue-1@2019-11-21 15:26:56',
+ 'pareto_Social_Toll_revenue-2@2019-11-20 13:12:56',
+ 'pareto_Social_Toll_revenue-3@2019-11-22 11:23:56',
+ 'pareto_Social_Toll_revenue-4@2019-11-21 14:42:10',
+ 'pareto_Social_Toll_revenue-5@2019-11-21 11:19:16',
+ 'pareto_car_04_aggregate_congestion-1@2019-11-20 07:38:18',
+ 'pareto_car_04_aggregate_congestion-2@2019-11-18 22:59:56',
+ 'pareto_car_04_aggregate_congestion-3@2019-11-22 13:18:03',
+ 'pareto_car_04_aggregate_congestion-4@2019-11-19 22:48:58',
+ 'pareto_car_04_aggregate_social-1@2019-11-20 07:38:18',
+ 'pareto_car_04_aggregate_social-2@2019-11-22 00:15:37',
+ 'pareto_car_04_aggregate_toll_rev-1@2019-11-20 07:38:18',
+ 'pareto_car_04_aggregate_toll_rev-2@2019-11-21 17:30:13',
+ 'pareto_car_04_aggregate_toll_rev-3@2019-11-19 17:18:00',
+ 'pareto_car_04_aggregate_toll_rev-4@2019-11-21 14:42:10',
+ 'pareto_car_04_aggregate_toll_rev-5@2019-11-19 08:39:28',
+ 'pareto_car_04_congestion_social-1@2019-11-21 23:49:10',
+ 'pareto_car_04_congestion_social-2@2019-11-19 22:48:58',
+ 'pareto_car_04_congestion_social-4@2019-11-22 13:18:03',
+ 'pareto_car_04_congestion_social-5@2019-11-18 22:59:56',
+ 'pareto_car_04_congestion_social-6@2019-11-20 07:38:18',
+ 'pareto_car_04_congestion_social-7@2019-11-22 00:15:37',
+ 'pareto_car_04_congestion_toll_rev-2@2019-11-22 13:18:03',
+ 'pareto_car_04_congestion_toll_rev-3@2019-11-18 22:59:56',
+ 'pareto_car_04_congestion_toll_rev-4@2019-11-21 23:01:22',
+ 'pareto_car_04_congestion_toll_rev-5@2019-11-20 11:47:09',
+ 'pareto_car_04_congestion_toll_rev-6@2019-11-21 13:16:05',
+ 'pareto_car_04_congestion_toll_rev-7@2019-11-19 17:18:00',
+ 'pareto_car_04_congestion_toll_rev-8@2019-11-19 09:46:23',
+ 'pareto_car_04_congestion_toll_rev-9@2019-11-19 08:39:28',
+ 'pareto_car_04_social_toll_rev-1@2019-11-22 00:15:37',
+ 'pareto_car_04_social_toll_rev-2@2019-11-21 17:30:13',
+ 'pareto_car_04_social_toll_rev-3@2019-11-19 12:58:55',
+ 'pareto_car_04_social_toll_rev-4@2019-11-20 13:12:56',
+ 'pareto_car_04_social_toll_rev-5@2019-11-22 11:23:56',
+ 'pareto_car_04_social_toll_rev-6@2019-11-21 14:42:10',
+ 'pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16'];
+
 document.addEventListener('DOMContentLoaded', function() {
     //console.log('document is ready. I can sleep now');
     var i;
@@ -16,11 +67,34 @@ document.addEventListener('DOMContentLoaded', function() {
         //var content = contents[i];
         document.getElementById(tab).addEventListener("click", navTab, false);
     }
-    constructPanel("Sioux-Faux-BAU@2019-11-12 21:31:09","pareto_car_04_social_toll_rev-7@2019-11-21 11:19:16");
+    constructDropdown(submissions);
+    constructPanel(submissions[0], submissions[submissions.length-1]);
 
     document.getElementById("select-sub-1").addEventListener("change", swapSubmission1, false);
     document.getElementById("select-sub-2").addEventListener("change", swapSubmission2, false);
 });
+
+function constructDropdown(submissions) {
+    var select1 = document.getElementById("select-sub-1");
+    var select2 = document.getElementById("select-sub-2");
+
+    var i;
+    for (i=0; i < submissions.length; i++) {
+        var option = document.createElement("option");
+        if (i == 0) {option.selected = true;}
+        option.value = submissions[i];
+        option.insertAdjacentHTML( 'beforeend', submissions[i] );
+        select1.appendChild(option);
+    }
+
+    for (i=0; i < submissions.length; i++) {
+        var option = document.createElement("option");
+        if (i == (submissions.length-1)) {option.selected = true;}
+        option.value = submissions[i];
+        option.insertAdjacentHTML( 'beforeend', submissions[i] );
+        select2.appendChild(option);
+    }
+}
 
 function navTab(event) {
     var tabId = this.id;
