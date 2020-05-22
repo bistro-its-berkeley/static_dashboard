@@ -1,11 +1,11 @@
 "use strict";
 
-let tabs = ["input-nav", "score-nav", "mode-nav", "service-nav",
+let tabs = ["score-nav", "mode-nav", "service-nav",
             "congestion-nav", "benefit-nav", "toll-nav", "sustainability-nav"];
-let panels = ["input-panel", "score-panel", "mode-panel", "service-panel",
+let panels = ["score-panel", "mode-panel", "service-panel",
               "congestion-panel", "benefit-panel", "toll-panel", 
               "sustainability-panel"];
-let contents = ["input", "score", "mode", "service", "congestion", "benefit",
+let contents = ["score", "mode", "service", "congestion", "benefit",
                "toll", "sustainability"];
 
 let submissions = ['RS_MILEAGE_Social_TR_21(5dd90bd9aa66dcb00e7c499a)',
@@ -160,14 +160,13 @@ function constructDropdown(submissions) {
 function navTab(event) {
     var tabId = this.id;
     var content = tabId.substring(0,tabId.length-4);
-    //console.log(content);
+
     var activeDiv = document.getElementsByClassName("bk-bs-active");
-    //console.log(activeDiv.length);
+
     // first remove all active status
     var i;
     var length = activeDiv.length;
     for (i = 0; i < length; i++) {
-        //console.log(i);
         activeDiv[0].classList.remove("bk-bs-active");
     }
     // assign active status to selected name
@@ -225,7 +224,7 @@ function gridElement(width, height, className) {
 
 
 function constructPanel(sub1, sub2) {
-    inputPanel(sub1, sub2);
+    //inputPanel(sub1, sub2);
     scorePanel(sub1, sub2);
     modePanel(sub1, sub2);
     servicePanel(sub1, sub2);
@@ -238,6 +237,7 @@ function constructPanel(sub1, sub2) {
     // what bokeh has generated for the actual Bistro Dashboard.
 }
 
+/*
 function inputPanel(sub1, sub2) {
     var inputPanel = document.getElementById("input-panel");
     inputPanel.innerHTML = "";
@@ -265,6 +265,7 @@ function inputPanel(sub1, sub2) {
     outerCol.appendChild(row);
     inputPanel.appendChild(outerCol);
 }
+*/
 
 function scorePanel(sub1, sub2) {
     var scorePanel = document.getElementById("score-panel");
@@ -273,7 +274,7 @@ function scorePanel(sub1, sub2) {
     var row = gridRow("1200px", "1400px");
     var innerCol = gridColumn("1200px", "1400px");
     var figurePath = "figures/";
-    var scoreFile = ["normalized_scores.png", "casestudy_scores.png"];
+    var scoreFile = [/*"normalized_scores.png",*/ "casestudy_scores.png"];
     // remember to change the size of columns and rows below if you want to
     // add or remove plots in the list above.
     var subs = [sub1, sub2];
