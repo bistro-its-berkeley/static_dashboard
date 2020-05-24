@@ -8,7 +8,8 @@ let panels = ["score-panel", "mode-panel", "service-panel",
 let contents = ["score", "mode", "service", "congestion", "benefit",
                "toll", "sustainability"];
 
-let submissions = ['RS_MILEAGE_Social_TR_21(5dd90bd9aa66dcb00e7c499a)',
+let submissions = ['siouxfaux_15k_BAU',
+ 'RS_MILEAGE_Social_TR_21(5dd90bd9aa66dcb00e7c499a)',
  'RS_MILEAGE_Congestion_TR_41(5dd8c115aa66dcb00e7c497e)',
  'RS_MILEAGE_Congestion_TR_14(5dd6533959ca2a5c5a39b229)',
  'RS_CORDON_Social_TR_8(5e5c5b5a50b83111c4efd579)',
