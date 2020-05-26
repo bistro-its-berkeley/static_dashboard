@@ -8,6 +8,7 @@ let panels = ["score-panel", "mode-panel", "service-panel",
 let contents = ["score", "mode", "service", "congestion", "benefit",
                "toll", "sustainability"];
 
+// Append to this list when adding new submissions to this static dashboard
 let submissions = ['siouxfaux_15k_BAU',
  'RS_MILEAGE_Social_TR_21(5dd90bd9aa66dcb00e7c499a)',
  'RS_MILEAGE_Congestion_TR_41(5dd8c115aa66dcb00e7c497e)',
